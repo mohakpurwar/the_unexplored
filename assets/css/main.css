@@ -2,6 +2,7 @@
 *,
 *:before,
 *:after {
+  transition: color .2s linear, text-shadow .2s linear;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -71,7 +72,7 @@ header {
   top: 0;
   width: 100%;
   z-index: 2;
-}
+  }
 
 .header__nav {
   padding: 2rem 1.5rem;
@@ -133,7 +134,8 @@ header {
     https://codepen.io/alticreation/pen/zBZwOP
     */
   display: inline-block;
-  transition: all .3s;
+  transition: width 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+         color 1s ease-in-out;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -220,7 +222,19 @@ header {
 .nav-close-icon:after {
   transform: rotateZ(-45deg) translate(1rem, 0.5rem);
 }
+.header {
+  animation: fadeinLoad 1s 5s forwards;
+  opacity: 0;
+}
 
+@keyframes fadeinLoad {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /*End Header */
 /*End Hero */
 .hero {
